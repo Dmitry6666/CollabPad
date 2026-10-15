@@ -7,5 +7,9 @@
     "start": "node index.js",
     "dev": "node --watch index.js"
   },
-  "dependencies": {}
+  "dependencies": {
+    "ws": "^8.18.0",
+    "y-websocket": "^2.0.4",
+    "yjs": "^13.6.20"
+  }
 }

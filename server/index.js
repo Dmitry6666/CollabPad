@@ -1,6 +1,13 @@
 import { WebSocketServer } from 'ws';
 import http from 'http';
-import { setupWSConnection } from 'y-websocket/bin/utils.js';
+import { createRequire } from 'module';
+
+// В ESM нельзя require(), но createRequire это обходит
+const require = createRequire(import.meta.url);
+
+// y-websocket@2.1.0 поставляет setupWSConnection в bin/utils.cjs
+// package.json exports: "./bin/utils": "./bin/utils.cjs"
+const { setupWSConnection } = require('y-websocket/bin/utils');
 
 const PORT = process.env.PORT || 1234;
 
